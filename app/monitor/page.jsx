@@ -1,0 +1,27 @@
+import Header from '../../components/Header';
+
+export default function Monitor() {
+  const projects = [
+    ['MANZOR TECH Platform', 'منظور تقني', 'تأسيس المنصة'],
+    ['Manzor Tech Mails', 'داخلي', 'Google API'],
+    ['CRM', 'منظور تقني', 'هيكلة البيانات'],
+  ];
+
+  return (
+    <main className="page">
+      <Header title="شاشة المتابعة" subtitle="Monitor" />
+      <div className="stats">
+        <div className="card stat"><h3>المشاريع</h3><p>3</p></div>
+        <div className="card stat"><h3>عملاء نشطين</h3><p>1</p></div>
+        <div className="card stat"><h3>الأنظمة</h3><p>17</p></div>
+      </div>
+      <section className="card">
+        <h2 className="section-title">سير العمل الحالي</h2>
+        <table className="table">
+          <thead><tr><th>المشروع</th><th>العميل</th><th>المسار</th></tr></thead>
+          <tbody>{projects.map((p, i) => <tr key={i}>{p.map((x, j) => <td key={j}>{x}</td>)}</tr>)}</tbody>
+        </table>
+      </section>
+    </main>
+  );
+}
