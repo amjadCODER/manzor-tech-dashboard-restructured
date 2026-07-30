@@ -1,0 +1,2 @@
+import Image from 'next/image'; import Link from 'next/link'; import SignOutButton from './SignOutButton';
+export default function Header({ title='منصة منظور تقني', subtitle='MANZOR TECH SYSTEMS' }) { return <header className="topbar"><Link href="/dashboard" className="brand"><Image className="brand-logo" src="/manzor-tech-icon.png" width={152} height={152} alt="MANZOR TECH" priority/><div className="brand-copy"><h1>{title}</h1><p>{subtitle}</p></div></Link><div className="header-actions"><Link className="btn" href="/profile">ملفي</Link><SignOutButton/></div></header> }
