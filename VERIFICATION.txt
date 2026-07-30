@@ -1,0 +1,26 @@
+MANZOR TECH PLATFORM - FINAL FULL PROJECT
+
+Verified items:
+- Original website remains the root page (/).
+- Login/signup route exists (/login).
+- Customer profile route exists (/profile).
+- Platform dashboard route exists (/platform).
+- Admin settings route exists (/platform/settings).
+- Customer tickets route exists (/platform/tickets).
+- Professional light dashboard UI uses SVG icons, not emoji.
+- Mobile responsive layout included.
+- Email Dashboard: https://manzor-mai-ls.vercel.app/
+- Email Sender: https://mails-sender-apis.vercel.app
+- WhatsApp Sender: https://whatsapp-photo.vercel.app/
+- Task Monitor: https://manzor-task-screen.vercel.app/monitor
+- Manzor Vault: https://manzor-tech-vault.vercel.app/
+- Website, WhatsApp, Settings, and Customer Tickets routes included.
+- Ticket number and ticket replies implementation included.
+- Supabase upgrade script: supabase/ticket-messages-upgrade.sql
+- Existing users/tickets are not deleted by the upgrade script.
+
+Before deployment:
+1. Put the CONTENTS of this archive in the repository root (do not upload the ZIP as a file).
+2. Keep the existing Vercel environment variables.
+3. Run supabase/ticket-messages-upgrade.sql once in Supabase SQL Editor.
+4. Deploy on Vercel.
