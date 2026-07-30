@@ -1,6 +1,17 @@
 # Manzor Tech Platform
 
-1. Run `supabase/schema.sql` in Supabase SQL Editor.
-2. Add the three values from `.env.example` to `.env.local` and Vercel Environment Variables.
-3. Sign up once, then promote your account with the SQL command at the end of the schema.
-4. Deploy to Vercel.
+## تحديث التذاكر
+قبل نشر هذه النسخة، شغّل الملف التالي كاملا في Supabase SQL Editor:
+
+`supabase/schema.sql`
+
+الملف آمن للتشغيل على القاعدة الحالية، ويضيف:
+- رقم تذكرة متسلسل بصيغة MT-001001
+- محادثة وردود بين العميل والدعم
+- حالات التذكرة
+- سياسات RLS اللازمة
+
+## Vercel Environment Variables
+- NEXT_PUBLIC_SUPABASE_URL
+- NEXT_PUBLIC_SUPABASE_ANON_KEY
+- SUPABASE_SERVICE_ROLE_KEY
