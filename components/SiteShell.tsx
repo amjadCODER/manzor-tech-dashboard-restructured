@@ -1,6 +1,22 @@
 "use client";
-import {useEffect} from "react";
-export default function SiteShell({html}:{html:string}){
- useEffect(()=>{const s=document.createElement("script");s.src="/script.js";s.defer=true;document.body.appendChild(s);return()=>{s.remove()}},[]);
- return <div dangerouslySetInnerHTML={{__html:html}}/>;
+
+import { ReactNode, useEffect } from "react";
+
+type SiteShellProps = {
+  children: ReactNode;
+};
+
+export default function SiteShell({ children }: SiteShellProps) {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "/script.js";
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, []);
+
+  return <>{children}</>;
 }

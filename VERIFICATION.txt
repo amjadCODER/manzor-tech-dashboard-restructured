@@ -1,26 +1,52 @@
-MANZOR TECH PLATFORM - FINAL FULL PROJECT
+MANZOR TECH PLATFORM - RELEASE VERIFICATION
 
-Verified items:
-- Original website remains the root page (/).
-- Login/signup route exists (/login).
-- Customer profile route exists (/profile).
-- Platform dashboard route exists (/platform).
-- Admin settings route exists (/platform/settings).
-- Customer tickets route exists (/platform/tickets).
-- Professional light dashboard UI uses SVG icons, not emoji.
-- Mobile responsive layout included.
-- Email Dashboard: https://manzor-mai-ls.vercel.app/
-- Email Sender: https://mails-sender-apis.vercel.app
-- WhatsApp Sender: https://whatsapp-photo.vercel.app/
-- Task Monitor: https://manzor-task-screen.vercel.app/monitor
-- Manzor Vault: https://manzor-tech-vault.vercel.app/
-- Website, WhatsApp, Settings, and Customer Tickets routes included.
-- Ticket number and ticket replies implementation included.
-- Supabase upgrade script: supabase/ticket-messages-upgrade.sql
-- Existing users/tickets are not deleted by the upgrade script.
+APPLICATION ROUTES
+[ ] / loads the public website.
+[ ] /login supports sign in, sign up, and password recovery.
+[ ] /reset-password accepts a valid Supabase recovery session.
+[ ] /profile is restricted to customer accounts.
+[ ] /platform is restricted to active employee/admin accounts.
+[ ] /platform/settings is restricted to active admin accounts.
+[ ] /platform/tickets is restricted to staff accounts.
 
-Before deployment:
-1. Put the CONTENTS of this archive in the repository root (do not upload the ZIP as a file).
-2. Keep the existing Vercel environment variables.
-3. Run supabase/ticket-messages-upgrade.sql once in Supabase SQL Editor.
-4. Deploy on Vercel.
+AUTHENTICATION
+[ ] Duplicate email registration is rejected.
+[ ] Existing users can request password recovery.
+[ ] Recovered passwords can be updated successfully.
+[ ] Sessions refresh before token expiry.
+[ ] Disabled accounts cannot access protected workspaces.
+
+ADMINISTRATION
+[ ] Admin can update user role.
+[ ] Admin can enable or disable a user account.
+[ ] Admin can update application permissions.
+[ ] Admin can set a new user password.
+[ ] Password values are never written to activity logs.
+[ ] SUPABASE_SERVICE_ROLE_KEY is used server-side only.
+
+TICKETS
+[ ] Customers can create tickets and replies.
+[ ] Staff can view customer tickets and reply.
+[ ] Ticket status can be updated by staff.
+[ ] Existing ticket data remains available after schema migration.
+
+UI
+[ ] Platform workspace uses the available viewport width appropriately.
+[ ] Desktop and mobile layouts remain usable.
+[ ] External system links open correctly.
+[ ] Public website modals, search, images, and system previews remain functional.
+
+DATABASE
+[ ] supabase/schema.sql completed successfully.
+[ ] Row Level Security policies are enabled and verified.
+[ ] Existing users remain present after schema changes.
+[ ] Existing tickets remain present after schema changes.
+
+DEPLOYMENT
+[ ] NEXT_PUBLIC_SUPABASE_URL is configured.
+[ ] NEXT_PUBLIC_SUPABASE_ANON_KEY is configured.
+[ ] SUPABASE_SERVICE_ROLE_KEY is configured as a server secret.
+[ ] Production /reset-password URL is present in Supabase Redirect URLs.
+[ ] npm run typecheck passes.
+[ ] npm run build passes.
+[ ] Vercel preview smoke test passes before production promotion.

@@ -65,3 +65,6 @@ grant usage on schema public to anon,authenticated;grant select on public.profil
 insert into public.profiles(id,full_name,phone,email,role,status)
 select u.id,coalesce(u.raw_user_meta_data->>'full_name',''),nullif(u.raw_user_meta_data->>'phone',''),coalesce(u.email,''),'customer','active' from auth.users u
 on conflict(id) do update set full_name=excluded.full_name,phone=excluded.phone,email=excluded.email,updated_at=now();
+
+-- Keep profile email identity unique regardless of casing.
+create unique index if not exists profiles_email_lower_uidx on public.profiles (lower(email)) where email <> '';
