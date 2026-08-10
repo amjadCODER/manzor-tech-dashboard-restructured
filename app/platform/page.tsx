@@ -59,7 +59,7 @@ export default function PlatformPage() {
       <section className="platform-hero">
         <div className="platform-hero-copy">
           <span className="platform-kicker">مركز الانظمة الرقمية</span>
-          <h1>كل ادوات العمل في منصة واحدة</h1>
+          <h1>كل ثانية تمضي تصنع نسخة أفضل منك           </h1>
           <p>وصول منظم وسريع للانظمة المصرح بها حسب دورك وصلاحيات حسابك.</p>
         </div>
         <div className="platform-stat"><strong>{visibleApps.length}</strong><span>نظام متاح لحسابك</span></div>
