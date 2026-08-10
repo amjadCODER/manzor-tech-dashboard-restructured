@@ -60,13 +60,13 @@ export default function PlatformPage() {
         <div className="platform-hero-copy">
           <span className="platform-kicker">مركز الانظمة الرقمية</span>
           <h1>كل ثانية تمضي تصنع نسخة أفضل منك           </h1>
-          <p>وصول منظم وسريع للانظمة المصرح بها حسب دورك وصلاحيات حسابك.</p>
+        
         </div>
         <div className="platform-stat"><strong>{visibleApps.length}</strong><span>نظام متاح لحسابك</span></div>
       </section>
 
       <section className="systems-panel">
-        <div className="systems-heading"><div><span>الانظمة</span><h2>اختر النظام المطلوب</h2></div><small>الانظمة الخارجية تفتح في تبويب جديد</small></div>
+        <div className="systems-heading"><div><span></span><h2>  </h2></div><small>     </small></div>
         <div className="apps-grid">
           {visibleApps.map((app) => {
             const isComingSoon = app.url === "#";
